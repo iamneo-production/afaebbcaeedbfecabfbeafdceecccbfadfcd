@@ -43,4 +43,4 @@ jobs:
           \"$BRANCH_NAME\", \"github_username\": \"$GITHUB_USERNAME\" }"
 
           curl -X POST -H "Content-Type: application/json" -d "$API_PAYLOAD"
-          $API_URL
+          $API_URL 
