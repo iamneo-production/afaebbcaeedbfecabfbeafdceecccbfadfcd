@@ -1,11 +1,32 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div>
+  <label for="fromCurrency">Source CCY:</label>
+  <select id="fromCurrency" [(ngModel)]="fromCurrency">
+    <option value="USD">USD</option>
+    <option value="GBP">GBP</option>
+    <option value="INR">INR</option>
+  </select>
+</div>
+
+<div>
+  <label for="toCurrency">Target CCY:</label>
+  <select id="toCurrency" [(ngModel)]="toCurrency">
+    <option value="USD">USD</option>
+    <option value="GBP">GBP</option>
+    <option value="INR">INR</option>
+  </select>
+</div>
+
+<div>
+  <label for="amount">Amount (Rs):</label>
+  <input type="number" id="amount" [(ngModel)]="amount">
+</div>
+
+<button type="button" id="submitButton" (click)="performConversion()">Submit</button>
+
+<div id="result">
+  Result: {{ amount | forexConversion: fromCurrency: toCurrency | number:'1.2-2' }}
+</div>
+
 
 <style>
   :host {
